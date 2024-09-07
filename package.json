@@ -20,6 +20,12 @@
   "sideEffects": [
     "**/*.css"
   ],
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx,vue}": [
+      "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./",
+      "stylelint --fix \"/src/**/*.{css,less}\""
+    ]
+  },
   "scripts": {
     "dev": "cd playground && vite",
     "build": "gulp -f ./script/build/index.ts",
@@ -30,6 +36,7 @@
     "docs:build": "cd docs && vitepress build",
     "lint:script": "eslint --ext .js,.jsx,.vue,.ts,.tsx --ignore-pattern 'node_modules/*' --fix --quiet .",
     "lint:style": "stylelint --ignore-pattern 'node_modules/*' --fix \"src/**/*.{css,less}\"",
+    "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
   "peerDependencies": {
@@ -62,6 +69,7 @@
     "happy-dom": "^8.9.0",
     "husky": "^8.0.3",
     "less": "^4.1.3",
+    "lint-staged": "^15.2.10",
     "postcss-html": "^1.5.0",
     "postcss-less": "^6.0.0",
     "prettier": "^2.8.4",
