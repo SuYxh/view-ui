@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "./dist",
     "jsx": "preserve",
     "strict": true,
     "target": "ES2015",
