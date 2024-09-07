@@ -27,7 +27,9 @@
     "build:umd": "vite build --config vite.config.umd.ts",
     "publish": "gulp -f script/publish/index.ts",
     "docs:dev": "cd docs && vitepress dev",
-    "docs:build": "cd docs && vitepress build"
+    "docs:build": "cd docs && vitepress build",
+    "lint:script": "eslint --ext .js,.jsx,.vue,.ts,.tsx --fix --quiet ./src",
+    "lint:style": "stylelint --fix \"src/**/*.{css,less}\""
   },
   "peerDependencies": {
     "vue": "^3.0.0"

@@ -10,9 +10,7 @@
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "allowJs": true,
     "resolveJsonModule": true,

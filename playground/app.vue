@@ -5,5 +5,4 @@
     <x-button type="primary">默认按钮</x-button>
   </div>
 </template>
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
