@@ -29,7 +29,8 @@
     "docs:dev": "cd docs && vitepress dev",
     "docs:build": "cd docs && vitepress build",
     "lint:script": "eslint --ext .js,.jsx,.vue,.ts,.tsx --ignore-pattern 'node_modules/*' --fix --quiet .",
-    "lint:style": "stylelint --ignore-pattern 'node_modules/*' --fix \"src/**/*.{css,less}\""
+    "lint:style": "stylelint --ignore-pattern 'node_modules/*' --fix \"src/**/*.{css,less}\"",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
