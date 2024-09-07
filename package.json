@@ -28,6 +28,14 @@
       "stylelint --fix \"/src/**/*.{css,less}\""
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
+  },
   "scripts": {
     "dev": "cd playground && vite",
     "build": "gulp -f ./script/build/index.ts",
@@ -40,6 +48,7 @@
     "lint:style": "stylelint --ignore-pattern 'node_modules/*' --fix \"src/**/*.{css,less}\"",
     "lint-staged": "lint-staged",
     "test": "vitest run",
+    "cz": "git add . && cz",
     "release": "gulp -f ./script/publish/index.ts",
     "prepare": "husky install"
   },
@@ -61,6 +70,9 @@
     "@vitepress-demo-preview/plugin": "^1.2.3",
     "@vue/runtime-core": "^3.2.47",
     "@vue/test-utils": "^2.3.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.2.1",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

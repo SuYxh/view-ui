@@ -19,5 +19,8 @@
   },
   "hooks": {
     "after:bump": "npx auto-changelog -p"
+  },
+  "commitizen": {
+    "path": "./node_modules/cz-customizable"
   }
 }
