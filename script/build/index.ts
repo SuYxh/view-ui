@@ -24,6 +24,14 @@ export const buildComponent = async () => {
   })
 };
 
+export const buildUmdComponent = async () => {
+  return runCommand('pnpm run build:umd', rootPath).then(res => {
+    console.log('打包 umd 组件成功')
+  }).catch(err => {
+    console.log('打包 umd 组件 error', err)
+  })
+};
+
 //打包样式
 export const buildStyle = () => {
   return src(`${rootPath}/src/**/style/**.less`)
@@ -56,6 +64,8 @@ export default series(
   async () => cleanupVue2Files(),
   // 打包样式
   async () => buildStyle(),
+  // 打包 umd 组件
+  async () => buildUmdComponent(),
   // 复制文件
   async () => copyFiles(),
 );

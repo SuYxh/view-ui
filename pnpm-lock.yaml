@@ -40,6 +40,7 @@ specifiers:
   typescript: ^4.9.5
   unplugin-vue-define-options: ^1.2.1
   vite: ^4.1.1
+  vite-plugin-css-injected-by-js: ^3.5.1
   vite-plugin-dts: ^1.4.1
   vitest: ^0.29.2
   vue: ^3.2.36
@@ -84,6 +85,7 @@ devDependencies:
   typescript: 4.9.5
   unplugin-vue-define-options: 1.4.9_vue@3.5.3
   vite: 4.5.3_fpt35z2z5ibrmjlua6f2hoyznq
+  vite-plugin-css-injected-by-js: 3.5.1_vite@4.5.3
   vite-plugin-dts: 1.7.3_fijzrkbqbitfb4ov3orxnbxwpa
   vitest: 0.29.8_happy-dom@8.9.0+less@4.2.0
   vue: 3.5.3_typescript@4.9.5
@@ -9534,6 +9536,14 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-css-injected-by-js/3.5.1_vite@4.5.3:
+    resolution: {integrity: sha512-9ioqwDuEBxW55gNoWFEDhfLTrVKXEEZgl5adhWmmqa88EQGKfTmexy4v1Rh0pAS6RhKQs2bUYQArprB32JpUZQ==}
+    peerDependencies:
+      vite: '>2.0.0-0'
+    dependencies:
+      vite: 4.5.3_fpt35z2z5ibrmjlua6f2hoyznq
     dev: true
 
   /vite-plugin-dts/1.7.3_fijzrkbqbitfb4ov3orxnbxwpa:
