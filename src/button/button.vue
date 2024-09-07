@@ -1,5 +1,5 @@
 <template>
-  <button class="ea-button" :class="buttonStyle">
+  <button class="x-button" :class="buttonStyle">
     <slot />
   </button>
 </template>
@@ -18,7 +18,7 @@ type ButtonProps = {
 const buttonProps = defineProps<ButtonProps>();
 
 const buttonStyle = computed(() => {
-  return { [`ea-button--${buttonProps.type}`]: buttonProps.type };
+  return { [`x-button--${buttonProps.type}`]: buttonProps.type };
 });
 
 </script>

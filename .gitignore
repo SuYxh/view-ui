@@ -26,3 +26,7 @@ yarn-error.log*
 *.sw?
 
 # package-lock.json 不建议忽略，参见 https://www.zhihu.com/question/264560841/answer/286682428
+
+#Vitepress
+docs/.vitepress/cache
+docs/.vitepress/dist
