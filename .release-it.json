@@ -15,7 +15,7 @@
   "github": {
     "release": true,
     "releaseName": "v${version}",
-    "releaseNotes": "npx auto-changelog --stdout --commit-limit false -u --template ./changelog-template.hbs"
+    "releaseNotes": "npx auto-changelog --stdout --commit-limit false -u"
   },
   "hooks": {
     "after:bump": "npx auto-changelog -p"
