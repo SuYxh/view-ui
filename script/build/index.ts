@@ -7,29 +7,35 @@ import { unlink } from 'fs/promises';
 
 // 删除 dist 目录
 export const removeDist = () => {
-  const distPath = `${rootPath}/dist`
-  return deleteFileByPath(distPath).then(() => {
-    console.log('删除 dist 目录成功')
-  }).catch(err => {
-    console.log('删除 dist 目录失败', err)
-  })
+  const distPath = `${rootPath}/dist`;
+  return deleteFileByPath(distPath)
+    .then(() => {
+      console.log('删除 dist 目录成功');
+    })
+    .catch((err) => {
+      console.log('删除 dist 目录失败', err);
+    });
 };
 
 // 打包组件
 export const buildComponent = async () => {
-  return runCommand('pnpm run build:component', rootPath).then(res => {
-    console.log('打包组件成功')
-  }).catch(err => {
-    console.log('打包组件 error', err)
-  })
+  return runCommand('pnpm run build:component', rootPath)
+    .then((res) => {
+      console.log('打包组件成功');
+    })
+    .catch((err) => {
+      console.log('打包组件 error', err);
+    });
 };
 
 export const buildUmdComponent = async () => {
-  return runCommand('pnpm run build:umd', rootPath).then(res => {
-    console.log('打包 umd 组件成功')
-  }).catch(err => {
-    console.log('打包 umd 组件 error', err)
-  })
+  return runCommand('pnpm run build:umd', rootPath)
+    .then((res) => {
+      console.log('打包 umd 组件成功');
+    })
+    .catch((err) => {
+      console.log('打包 umd 组件 error', err);
+    });
 };
 
 //打包样式
@@ -43,8 +49,9 @@ export const buildStyle = () => {
 };
 
 export const copyFiles = async () => {
-  return src([`${rootPath}/README.md`, `${rootPath}/package.json`])
-    .pipe(dest(`${rootPath}/dist`));
+  return src([`${rootPath}/README.md`, `${rootPath}/package.json`]).pipe(
+    dest(`${rootPath}/dist`)
+  );
 };
 
 export const cleanupVue2Files = async () => {
@@ -53,7 +60,6 @@ export const cleanupVue2Files = async () => {
     await unlink(file);
   }
 };
-
 
 export default series(
   // 删除 dist 目录
@@ -67,5 +73,5 @@ export default series(
   // 打包 umd 组件
   async () => buildUmdComponent(),
   // 复制文件
-  async () => copyFiles(),
+  async () => copyFiles()
 );

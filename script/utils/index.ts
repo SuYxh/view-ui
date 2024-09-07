@@ -1,3 +1,3 @@
-export * from './deleteFileByPath'
-export * from './paths'
-export * from './runCommand'
+export * from './deleteFileByPath';
+export * from './paths';
+export * from './runCommand';

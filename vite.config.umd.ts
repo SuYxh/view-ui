@@ -40,7 +40,7 @@ export default defineConfig({
     vue(),
     DefineOptions(),
     cssInjectedByJsPlugin({
-      jsAssetsFilterFunction: (chunk) => chunk.fileName === 'viewUI.umd.js',
-    }),
+      jsAssetsFilterFunction: (chunk) => chunk.fileName === 'viewUI.umd.js'
+    })
   ]
 });

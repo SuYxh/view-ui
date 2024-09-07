@@ -20,5 +20,4 @@ const buttonProps = defineProps<ButtonProps>();
 const buttonStyle = computed(() => {
   return { [`x-button--${buttonProps.type}`]: buttonProps.type };
 });
-
 </script>

@@ -12,9 +12,18 @@ module.exports = {
     'stylelint-config-prettier',
     'stylelint-prettier/recommended'
   ],
+  customSyntax: 'postcss-less',
   // 配置 rules
   rules: {
     // 开启 Prettier 自动格式化功能
-    'prettier/prettier': true
+    'prettier/prettier': true,
+    'selector-class-pattern': [
+      '^([a-z][a-z0-9]*)(-[a-z0-9]+)*$|^x-[a-z]+(-{1,2}[a-z]+)*$',
+      {
+        message: function (selector) {
+          return `Expected class selector "${selector}" to match custom pattern`;
+        }
+      }
+    ]
   }
 };

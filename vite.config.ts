@@ -63,10 +63,10 @@ export default defineConfig({
       tsConfigFilePath: './tsconfig.json',
       compilerOptions: {
         declarationDir: '.',
-        preserveModules: true,
+        preserveModules: true
       },
       include: ['src/**/*.ts', 'src/**/*.vue'],
-      exclude: ['src/**/*.spec.ts', 'src/**/*.test.ts'],
+      exclude: ['src/**/*.spec.ts', 'src/**/*.test.ts']
     }),
     DefineOptions(),
     {

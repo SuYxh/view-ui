@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './app.vue';
-import viewUI from '../dist/es/index'
+import viewUI from '../dist/es/index';
 
 const app = createApp(App);
 
