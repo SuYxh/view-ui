@@ -37,9 +37,17 @@ jobs:
           cache: 'pnpm'
           # cache: 'npm'
 
+      # 安装依赖
+      - name: install
+        run: pnpm install
+
+      # 打包组件
+      - name: Build Components
+        run: pnpm build  
+
       # 打包静态文件
-      - name: Build
-        run: pnpm install && pnpm run docs:build
+      - name: Build docs
+        run: pnpm docs:build
 
       - name: Copy files
         run: cp README.md ./docs/.vitepress/dist
