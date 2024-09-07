@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
-// @ts-ignore
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import { resolve } from 'path';
 
@@ -58,15 +57,17 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    // dts({
-    //   entryRoot: './src/index.ts',
-    //   outputDir: [
-    //     getESDir(),
-    //     getLibDir()
-    //   ],
-    //   //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
-    //   tsConfigFilePath: './tsconfig.json'
-    // }),
+    dts({
+      entryRoot: './src',
+      outputDir: resolve(__dirname, './dist/types'),
+      tsConfigFilePath: './tsconfig.json',
+      compilerOptions: {
+        declarationDir: '.',
+        preserveModules: true,
+      },
+      include: ['src/**/*.ts', 'src/**/*.vue'],
+      exclude: ['src/**/*.spec.ts', 'src/**/*.test.ts'],
+    }),
     DefineOptions(),
     {
       name: 'vite-plugin-replace-less-import',

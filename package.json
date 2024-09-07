@@ -1,12 +1,18 @@
 {
-  "name": "view-ui",
+  "name": "@yangxinhao/view-ui",
   "version": "1.0.0",
-  "author": "baiyu",
-  "description": "",
-  "keywords": [],
+  "author": "yangxinhao",
+  "description": "基于Vue3的UI组件库",
+  "keywords": [
+    "vue",
+    "ui",
+    "component",
+    "typescript"
+  ],
   "type": "module",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -49,7 +55,6 @@
     "glob": "^11.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
-    "gulp-json-modify": "^1.0.2",
     "gulp-less": "^5.0.0",
     "happy-dom": "^8.9.0",
     "husky": "^8.0.3",

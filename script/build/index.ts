@@ -9,7 +9,7 @@ import { unlink } from 'fs/promises';
 export const removeDist = () => {
   const distPath = `${rootPath}/dist`
   return deleteFileByPath(distPath).then(() => {
-    console.log('删除 dist 目录完成')
+    console.log('删除 dist 目录成功')
   }).catch(err => {
     console.log('删除 dist 目录失败', err)
   })
@@ -18,7 +18,7 @@ export const removeDist = () => {
 // 打包组件
 export const buildComponent = async () => {
   return runCommand('pnpm run build:component', rootPath).then(res => {
-    console.log('打包组件 over')
+    console.log('打包组件成功')
   }).catch(err => {
     console.log('打包组件 error', err)
   })
@@ -41,7 +41,6 @@ export const copyFiles = async () => {
 
 export const cleanupVue2Files = async () => {
   const files = await glob(`${rootPath}/dist/**/*.vue2.js`);
-  console.log('files', files)
   for (const file of files) {
     await unlink(file);
   }
@@ -49,9 +48,14 @@ export const cleanupVue2Files = async () => {
 
 
 export default series(
+  // 删除 dist 目录
   async () => removeDist(),
+  // 打包组件
   async () => buildComponent(),
+  // 删除 dist 目录下的 vue2 文件
   async () => cleanupVue2Files(),
+  // 打包样式
   async () => buildStyle(),
+  // 复制文件
   async () => copyFiles(),
 );
