@@ -21,7 +21,7 @@
     "**/*.css"
   ],
   "scripts": {
-    "dev": "pnpm run --filter ./playground dev",
+    "dev": "cd playground && vite",
     "build": "gulp -f ./script/build/index.ts",
     "build:component": "vite build",
     "build:umd": "vite build --config vite.config.umd.ts",
