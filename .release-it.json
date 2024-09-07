@@ -1,0 +1,23 @@
+{
+  "git": {
+    "requireCleanWorkingDir": true,
+    "requireUpstream": true,
+    "commit": true,
+    "commitMessage": "Release v${version}",
+    "tag": true,
+    "tagName": "v${version}",
+    "tagAnnotation": "Release v${version}",
+    "push": true
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "releaseNotes": "npx auto-changelog --stdout --commit-limit false -u --template ./changelog-template.hbs"
+  },
+  "hooks": {
+    "after:bump": "npx auto-changelog -p"
+  }
+}
